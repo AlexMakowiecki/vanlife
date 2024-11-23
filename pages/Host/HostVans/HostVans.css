@@ -1,0 +1,16 @@
+.host-vans{
+  padding-inline: var(--page-inline-padding);
+  color: var(--dark-font-70);
+}
+
+.host-vans__main-title{
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.host-vans__list{
+  display:flex;
+  flex-direction:column;
+  gap: 1rem;
+}
+

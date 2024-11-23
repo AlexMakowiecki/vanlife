@@ -1,0 +1,81 @@
+.host-van{
+  padding: 2.5rem var(--page-inline-padding);
+}
+
+.host-van__return{
+  display:flex;
+  align-items:center;
+  gap: 0.6875rem;
+  font-weight: 500;
+}
+
+.host-van__return-icon{
+  color:var(--dark-font-55);
+}
+
+.host-van__return-text{
+  color: var(--dark-font-65);
+  border-bottom: 1px solid currentColor;
+}
+
+.host-van__info{
+  background-color: var(--light-background-00);
+  padding: max(1.5625rem, calc(var(--page-inline-padding) / 2));
+  border-radius: 0.375rem;
+}
+
+.host-van__main-info{
+  display:flex;
+  align-items:center;
+  gap: 2vw;
+} 
+
+.host-van__info-text{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  color: var(--dark-font-70);
+  font-weight: 500;
+}
+
+.host-van__info-text > *{
+  margin-top: 0;
+}
+
+.host-van__type{
+  font-size: 0.8125rem;
+  margin-bottom: 1.1875rem;
+}
+
+.host-van__name{
+  font-size: 1.625rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem
+}
+
+.host-van__price{
+  font-size: 1.21875rem;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+.host-van__price > * {
+  line-height: 1;
+}
+
+.host-van__price-time{
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.host-van__img{
+  width: 10rem;
+  object-fit:cover;
+  border-radius: 0.3125rem;
+}
+
+.host-van__nav{
+  display:flex;
+  gap: 1.8125rem;
+  margin-block: 1.6875rem;
+}

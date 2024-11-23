@@ -1,0 +1,15 @@
+
+
+footer{
+  padding-block: 1.5625rem;
+  background-color: var(--dark-background-50);
+}
+
+footer p{
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.6;
+  text-align: center;
+  color: var(--light-font-60);
+}

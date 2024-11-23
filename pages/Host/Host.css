@@ -1,0 +1,79 @@
+ul{
+  list-style: none;
+  padding-left: 0;
+}
+
+.host__inline-padding{
+  padding-inline: var(--page-inline-padding);
+}
+
+.host__simple-link{
+  color: var(--dark-background-60);
+  font-weight: 500;
+}
+
+
+.host__income{
+  display:flex;
+  flex-direction:column;
+  gap: 2rem;
+  background-color: var(--light-background-60);
+  padding-block: 2.3125rem;
+}
+
+.host__income-text{
+  color: var(--dark-font-60)
+}
+
+.host__income-days{
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.host__income-number{
+  font-size: 3rem;
+  font-weight: 800;
+}
+
+.host__review{
+  display:flex;
+  align-items:center;
+  gap: .75rem;
+  padding-block: 2.8125rem;
+  background-color: var(--light-background-70)
+}
+
+.host__review .host__simple-link{
+  margin-left: auto;
+}
+
+.host__vans{
+  display:flex;
+  flex-direction:column;
+  gap: 1.875rem;
+  padding-block: 2.375rem 3.3125rem;
+}
+
+.host__vans-list{
+  display:flex;
+  flex-direction:column;
+  gap: 1rem;
+}
+
+.host__main-title{
+  font-size: 2.25rem;
+  font-weight: 700;
+}
+
+
+
+.host__score-text{
+  font-size: 1.25rem;
+}
+
+.van-small__edit-text{
+  color: var(--dark-font-70);
+  margin-left: auto;
+  font-size: 1rem;
+  font-weight: 500;
+}

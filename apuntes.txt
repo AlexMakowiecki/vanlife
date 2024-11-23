@@ -1,0 +1,43 @@
+React Router 6
+ - Routes: 
+   - BrowserRouter
+   - Routes
+   - Route
+     - path
+     - element
+     - index
+     - route nesting
+ - Link:
+   - to
+   - state
+     - uses
+ - NavLink:
+   - to
+   - className function
+     - isActive parameter
+   - end
+ - useLocation()
+   - state
+ - Navigate component
+   - state
+   - replace
+ - useNavigate()
+   - settings argument -> replace key
+ - Relative url pathing    		 
+ - Handling url params: 
+    - useParams()
+      - how to use it to access url params 		
+    - useSearchParams
+      - how to use it to access or modify url params
+      - get()
+      - setSearchParams
+    - URLSearchParams() (contructor)
+      - set()
+      - delete()
+    - Changing url params using "useSearchParams" and the URLSearchParams() object
+ - Layouts components
+   - Outlet
+     - context
+     - useOutletContext()
+   - Using Layouts with Route components 
+   

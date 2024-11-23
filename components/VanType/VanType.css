@@ -1,0 +1,22 @@
+.van__type{
+  height: fit-content;
+  grid-column: 1/2;
+  line-height: 2;
+  text-align: center;
+  padding: 0.125em 1em;
+  color:var(--light-font-70);
+  border-radius: 0.3125rem;
+  width: fit-content;
+}
+
+.van__type.luxury{
+  background-color: var(--luxury-color);
+}
+
+.van__type.simple{
+  background-color: var(--simple-color);
+}
+
+.van__type.rugged{
+  background-color: var(--rugged-color);
+}

@@ -1,0 +1,38 @@
+.home{
+  display:flex;
+  flex-direction:column;
+  background-image: linear-gradient(#00000075, #00000075), url("https://www.figma.com/file/igDA2NiMDhoaIIAqm5EnTq/image/050aaa4a9b62f902c3de6d1b54b3a5d23341752c");
+  background-size: cover;
+  color: var(--light-font-00);
+  padding: 12vw var(--page-inline-padding);
+}
+
+.home > *{
+  margin-top: 0;
+}
+
+.home__main-title{
+  font-size: 2.25rem;
+  font-weight: 800;
+  line-height: 1.16;
+  margin-bottom: 1.375rem;
+}
+
+.home__description{
+  font-weight: 500;
+  line-height: 1.5;
+  margin-bottom: 3.1875rem;
+}
+
+.home__button{
+  font-size: 1rem;
+  background-color: var(--light-background-90);
+  border:none;
+  color: var(--light-font-00);
+  font-weight: 700;
+  line-height: 2;
+  text-align: center;
+  padding-block: 0.625em;
+  border-radius: 5px;
+  text-decoration:none;
+}

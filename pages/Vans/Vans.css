@@ -1,0 +1,66 @@
+.vans{
+  padding: 3.375rem var(--page-inline-padding);
+}
+
+.vans__main-title{
+  font-family: Inter;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.05;
+}
+
+.vans__navigation{
+  display:flex;
+  gap: 1.25rem;
+}
+
+.vans__navigation-button{
+  padding: 0.375em 1em;
+  border:none;
+  border-radius: 0.3125em;
+  background-color: var(--light-background-60);
+  color: var(--dark-font-60);
+  font-weight: 500;
+  line-height: 1.495;
+  text-align: center;
+  transition: 200ms all cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.vans__navigation-button--simple:hover,
+.vans__navigation-button--simple.vans__navigation-button--selected{
+  background-color: var(--simple-color);
+  color: var(--light-background-60);
+}
+
+.vans__navigation-button--luxury:hover,
+.vans__navigation-button--luxury.vans__navigation-button--selected{
+  background-color: var(--luxury-color);
+  color: var(--light-background-60);
+}
+
+.vans__navigation-button--rugged:hover,
+.vans__navigation-button--rugged.vans__navigation-button--selected{
+  background-color: var(--rugged-color);
+  color: var(--light-background-60);
+}
+
+.vans__clear-button{
+  padding: 0.375em 1em;
+  border:none;
+  background:none;
+  color: var(--dark-font-60);
+  font-weight: 500;
+}
+
+.vans__clear-button:hover{
+  text-decoration:underline;
+}
+
+.vans__list{
+  padding-block: 3.4375rem;
+  list-style:none;
+  padding-left:0;
+  display:flex;
+  flex-wrap:wrap;
+  gap: 1.6875rem 2.125rem
+}

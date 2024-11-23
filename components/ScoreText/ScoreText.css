@@ -1,0 +1,22 @@
+.score-text{
+  display:flex;
+  align-items:center;
+  gap: 0.25em;
+}
+
+.score-text__icon{
+  color: var(--light-background-90);
+  font-size: 1.2em
+}
+
+.score-text__score{
+  color: #161616;
+  font-size: 1em;
+  font-weight: 700;
+}
+
+.score-text__total{
+  font-size: 1em;
+  font-weight: 500;
+  color: #4D4D4D
+}

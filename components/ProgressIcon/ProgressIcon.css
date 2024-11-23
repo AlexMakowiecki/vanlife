@@ -1,0 +1,25 @@
+.progress-icon{
+  position:relative;
+  font-size: inherit;
+  width: 1em;
+  height: 1em;
+}
+
+.progress-icon__background{
+  box-sizing: border-box;
+  position:absolute;
+  top: 0;
+  left: 0;
+  font-size: 1em;
+  color: var(--dark-font-30);
+  z-index: -1;
+  height: 100%;
+}
+
+.progress-icon__fill{
+  overflow:hidden;
+  font-size: 1em;
+  color: var(--light-background-90);
+  height: 100%;
+}
+

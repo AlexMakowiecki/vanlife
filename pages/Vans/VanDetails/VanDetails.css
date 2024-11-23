@@ -1,0 +1,94 @@
+
+.van-details{
+  padding: 2.5rem var(--page-inline-padding);
+}
+
+.van-details__return{
+  display:flex;
+  align-items:center;
+  gap: 0.6875rem;
+  font-weight: 500;
+}
+
+.van-details__return-icon{
+  color:var(--dark-font-55);
+}
+
+.van-details__return-text{
+  color: var(--dark-font-65);
+  border-bottom: 1px solid currentColor;
+}
+
+.van-details__info-text{
+  padding-block: 2.5rem;
+  color: var(--dark-font-70);
+  font-weight: 500;
+}
+
+.van-details__info-text > *{
+  margin-top: 0;
+}
+
+.van-details__type{
+  margin-bottom: 1.25rem;
+}
+
+.van-details__main-title,
+.van-details__price{
+  margin-bottom: 0.625rem
+}
+
+.van-details__description{
+  line-height: 1.5;
+  text-align: left;
+  margin-bottom:1.3125rem;
+}
+
+.van-details__button{
+  width: 100%;
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.756;
+  text-align: center;
+  padding-block: 0.55em;
+  background-color: var(--light-background-90);
+  color:var(--light-font-00);
+  border-radius: 0.27em;
+  border:none;
+}
+
+
+.van-details__price{
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.83;
+}
+
+.van-details__price-time{
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 2.2075;
+}
+
+.van-details__img{
+  width: 100%;
+  object-fit:cover;
+}
+
+@media (min-width: 720px){
+  .van-details__info{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap: 2vw;
+  }
+
+  .van-details__img{
+    flex-shrink: 0;
+    width: 40%;
+    height: 100%;
+    max-height: 40rem;
+    min-height: 600px;
+    border-radius: 1rem;
+  }
+}

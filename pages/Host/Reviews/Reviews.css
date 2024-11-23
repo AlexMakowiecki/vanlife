@@ -1,0 +1,33 @@
+.reviews{
+  padding-inline:var(--page-inline-padding)
+}
+
+.reviews__header{
+  display:flex;
+  align-items:baseline;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.reviews__main-title{
+  font-size: 2rem;
+}
+
+.reviews__subtitle{
+  font-weight: 500;
+  color: var(--dark-font-60)
+}
+
+.reviews__score-bars{
+  margin-bottom: 2.25rem;
+}
+
+.reviews__comments{
+  display:flex;
+  flex-direction:column;
+  gap: 2rem;
+}
+
+.reviews__separator{
+  border: 1px solid var(--dark-font-20);
+}

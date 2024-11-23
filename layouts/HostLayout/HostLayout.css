@@ -1,0 +1,5 @@
+.host-layout__nav{
+  display:flex;
+  gap: 1.8125rem;
+  padding-block: 2rem 2.8125rem
+}

@@ -1,0 +1,52 @@
+.score-bars{
+  font-size: 1rem;
+}
+
+.score-bars__header{
+  display:flex;
+  align-items:center;
+  gap: 0.375em;
+  margin-bottom: 1.5625em;
+}
+
+.score-bars__total-score{
+  font-family: Inter;
+  font-size: 2em;
+  font-weight: 700;
+  flex-direction:row-reverse;
+}
+
+.score-bars__star-icon{
+  font-size: 0.65em;
+}
+
+.score-bars__overall-text{
+  font-size: 1em;
+  font-weight: 500;
+  text-transform: lowercase;
+}
+
+.score-bars__main{
+  display:flex;
+  flex-direction:column-reverse;
+  gap: 1.40625em;
+}
+
+
+.score-bars__score{
+  display:flex;
+  align-items:center;
+  gap: 2em;
+  color: var(--dark-font-60);
+  font-family: Inter;
+  font-size: 1em;
+  font-weight: 500;
+}
+
+.score-bars__score > :not(.score-bars__percentage-bar){
+  flex-shrink: 0;
+}
+
+.score-bars__percentage-bar{
+  flex-grow: 2;
+}

@@ -1,0 +1,29 @@
+.review-comment{
+  display:flex;
+  flex-direction:column;
+  gap: 1rem;
+  max-width: 900px;
+}
+
+.review-comment__header{
+  display:flex;
+  gap: 0.3em;
+  font-weight: 600;
+}
+
+.review-comment__score{
+  font-size: 1.2em;
+}
+
+.review-comment__name{
+  color: var(--dark-font-70);
+}
+
+.review-comment__date{
+  color: var(--dark-font-50)
+}
+
+.review-comment__comment{
+  font-weight: 500;
+  color:var(--dark-font-70)
+}
