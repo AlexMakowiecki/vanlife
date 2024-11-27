@@ -8,7 +8,7 @@ import "./VanDetails.css"
 export default function VanDetails({imgSrc, type, name, price, description}){
   const [ van, setVan ] = React.useState(null)
   const { id } = useParams()
-  const { state } = useLocation()
+  const { state, pathname } = useLocation()
 
   React.useEffect(() => {
     getVan( id ).then(data => setVan(data))

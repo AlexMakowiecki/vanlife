@@ -27,11 +27,6 @@ export async function getVans(){
 export async function getVan( id ){
   const vanDocRef = doc(db, "vans", `${id}`)
   const docSnap = await getDoc(vanDocRef);
-  console.log("getVan executed")
-  console.log({
-    ...docSnap.data(),
-    id: docSnap.id
-  })
   return {
     ...docSnap.data(),
     id: docSnap.id

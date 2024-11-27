@@ -8,7 +8,7 @@ export default function Vans(){
   const [ vans, setVans ] = React.useState(null)
   const [ searchParams, setSearchParams ] = useSearchParams()
   const typeFilter = searchParams.get("type")
-
+  
   React.useEffect(() => {
     getVans().then(data => setVans(data))
   }, [])
