@@ -269,17 +269,19 @@ It's a website that simulates a website where you can rent vans or manage the va
 
         ``` 
     - <details>
-        <summary><b>Return to previous page, maintaining URL query params</b></summary>
+        <summary><b>Moving between pages, maintaining URL query params</b></summary>
 
         ```JSX
         
         /* Previous page */
-        /* Url: /prev-page?filterOne=valueOne&filterTwo=valueTwo*/
+        /* Url: /prev-page?filterOne=valueOne&filterTwo=valueTwo */
         import { useSearchParams } from "react-router-dom"
         export default function PrevPage(){
           const [ searchParams, setSearchParams ] = useSearchParams()
           return (
             <Link to="/next-page" state={{queryParams: searchParams.toString()}}>
+              To next page
+            </Link>
           )
         }
         /* Next page */
@@ -288,7 +290,11 @@ It's a website that simulates a website where you can rent vans or manage the va
           const location = useLocation();
           const queryParams = (location.queryParams) ? `?${location.queryParams}` : ""
           // queryParams = ?filterOne=valueOne&filterTwo=valueTwo
-          return <Link to={`/prev-page${queryParams}}` >
+          return (
+            <Link to={`/prev-page${queryParams}`}>
+              To previous page
+            </Link>  
+          )
         }
         ```
     - <details>
