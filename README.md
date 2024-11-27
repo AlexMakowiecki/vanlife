@@ -199,60 +199,61 @@ It's a website that simulates a website where you can rent vans or manage the va
       - `.toString()`: Returns a string with all the key&value pairs. (the same as in the url, without the question mark)
   - **Use cases**
     - <details>
-          <summary><b>Navigation bar with Layout</b></summary>
-
-          ```JSX
-          /* App */
-          import { BrowserRouter, Routes, Route } from "react-router-dom"
-          import { Layout } from "some-path"
-          export default function App(){
-            return (
-              <BrowserRouter>
-                <Routes>
-                  <Route path="/" element={<Layout/>}>
-                    <Route index element={<h1>Home</h1>}/> // => same as parent: /
-                    <Route path="account" element={<h1>Account</h1>}/> // => relative path: / + account = /account
-                  </Route>  
-                </Routes>
-              </BrowserRouter>
-            )
-          }
-          /* Layout component */
-          import { Outlet, NavLink } from "react-router-dom"
-          export default function Layout(){
-            return (
-              <nav>
-                /* NavLink required to determine className dynamically*/
-                <NavLink to="/" className={isActive => (isActive) ? "nav-link active" : "nav-link"}>
-                  Home
-                </NavLink>
-                <NavLink to="/account" className={isActive => (isActive) ? "nav-link active" : "nav-link"}>
-                  Account
-                </NavLink>
-              </nav>
-              <Outlet/> // if path="/" => <h1>Home</h1> || if path="/account" => <h1>Account</h1>
-            )
-          }
-          ```
+        <summary><b>Navigation bar with Layout</b></summary>
+      
+        ```JSX
+        /* App */
+        import { BrowserRouter, Routes, Route } from "react-router-dom"
+        import { Layout } from "some-path"
+        export default function App(){
+          return (
+            <BrowserRouter>
+              <Routes>
+                <Route path="/" element={<Layout/>}>
+                  <Route index element={<h1>Home</h1>}/> // => same as parent: /
+                  <Route path="account" element={<h1>Account</h1>}/> // => relative path: / + account = /account
+                </Route>  
+              </Routes>
+            </BrowserRouter>
+          )
+        }
+        /* Layout component */
+        import { Outlet, NavLink } from "react-router-dom"
+        export default function Layout(){
+          return (
+            <nav>
+              /* NavLink required to determine className dynamically*/
+              <NavLink to="/" className={isActive => (isActive) ? "nav-link active" : "nav-link"}>
+                Home
+              </NavLink>
+              <NavLink to="/account" className={isActive => (isActive) ? "nav-link active" : "nav-link"}>
+                Account
+              </NavLink>
+            </nav>
+            <Outlet/> // if path="/" => <h1>Home</h1> || if path="/account" => <h1>Account</h1>
+          )
+        }
+        ```
     - <details>
-          <summary><b>Using URL query params to order a list</b></summary>
+        <summary><b>Using URL query params to order a list</b></summary>
 
-          ```JSX
-          /* Layout component */
-          import { useSearchParams } from "react-router-dom"
-          export default function Layout(){
-            const [ searchParams, setSearchParams ] = useSearchParams()
+        ```JSX
+        /* Layout component */
+        import { useSearchParams } from "react-router-dom"
+        export default function Layout(){
+          const [ searchParams, setSearchParams ] = useSearchParams()
 
-            function setPriceOrder(priceOrder){
-              setSearchParams(prevSearchParams => {
-                prevSearchParams.set("price-order", priceOrder)
-              })
-            }
+          function setPriceOrder(priceOrder){
+            setSearchParams(prevSearchParams => {
+              prevSearchParams.set("price-order", priceOrder)
+            })
+          }
 
-            const priceOrder = searchParams.get("price-order")
-            const listClass = (priceOrder && priceOrder === "max") ? "max-order" : "min-order"
+          const priceOrder = searchParams.get("price-order")
+          const listClass = (priceOrder && priceOrder === "max") ? "max-order" : "min-order"
 
-            return (
+          return (
+            <>
               <nav>
                 <button onClick={setPriceOrder("max")}>Max price</button>
                 <button onClick={setPriceOrder("min")}>Min price</button>
@@ -262,50 +263,49 @@ It's a website that simulates a website where you can rent vans or manage the va
                 <li>4000$</li>
                 <li>9000$</li>
               </ul>
-            )
-          }
+            </>
+          )
+        }
 
-          ``` 
+        ``` 
     - <details>
-          <summary><b>Return to previous page, maintaining URL query params</b></summary>
+        <summary><b>Return to previous page, maintaining URL query params</b></summary>
 
-          ```JSX
+        ```JSX
+        
+        /* Previous page */
+        /* Url: /prev-page?filterOne=valueOne&filterTwo=valueTwo*/
+        import { useSearchParams } from "react-router-dom"
+        export default function PrevPage(){
+          const [ searchParams, setSearchParams ] = useSearchParams()
+          return (
+            <Link to="/next-page" state={{queryParams: searchParams.toString()}}>
+          )
+        }
+        /* Next page */
+        import { useLocation } from "react-router-dom"
+        export default function NextPage(){
+          const location = useLocation();
+          const queryParams = (location.queryParams) ? `?${location.queryParams}` : ""
+          // queryParams = ?filterOne=valueOne&filterTwo=valueTwo
+          return <Link to={`/prev-page${queryParams}}` >
+        }
+        ```
+    - <details>
+        <summary><b>Making a Auth Layout to protect private pages</b></summary>
+
+        ```JSX
+        /* Auth Layout */
+        export default function AuthRequired(){
           
-          /* Previous page */
-          /* Url: /prev-page?filterOne=valueOne&filterTwo=valueTwo*/
-          import { useSearchParams } from "react-router-dom"
-          export default function PrevPage(){
-            const [ searchParams, setSearchParams ] = useSearchParams()
-
-            
-            return (
-              <Link to="/next-page" state={{queryParams: searchParams.toString()}}>
-            )
-          }
-          /* Next page */
-          import { useLocation } from "react-router-dom"
-          export default function NextPage(){
-            const location = useLocation();
-            const queryParams = (location.queryParams) ? `?${location.queryParams}` : ""
-            // queryParams = ?filterOne=valueOne&filterTwo=valueTwo
-            <Link to={`/prev-page${queryParams}}` >
-          }
-          ```
-    - <details>
-          <summary><b>Making a Auth Layout to protect private pages</b></summary>
-
-          ```JSX
-          /* Auth Layout */
-          export default function AuthRequired(){
-            
-            /* Some code to get the Authorization. For the example, it will be set up as True*/
-            const auth = true
-            
-            return (auth)
-              ? <Navigate to="/need-to-login" replace>
-              : <Outlet/>
-          }
-          ```                                    
+          /* Some code to get the Authorization. For the example, it will be set up as True*/
+          const auth = true
+          
+          return (auth)
+            ? <Navigate to="/need-to-login" replace>
+            : <Outlet/>
+        }
+        ```                                    
 ## About Scrimba
 
 At Scrimba our goal is to create the best possible coding school at the cost of a gym membership! 💜
