@@ -7,22 +7,23 @@ React Router 6
      - element
      - index
      - route nesting
- - Link:
-   - to
-   - state
-     - uses
- - NavLink:
-   - to
-   - className function
-     - isActive parameter
-   - end
+ - Navigation
+   - Link:
+     - to
+     - state
+       - uses
+   - NavLink:
+     - to
+     - className function
+       - isActive parameter
+     - end
+   - Navigate component
+     - state
+     - replace
+   - useNavigate()
+     - settings argument -> replace key
  - useLocation()
    - state
- - Navigate component
-   - state
-   - replace
- - useNavigate()
-   - settings argument -> replace key
  - Relative url pathing    		 
  - Handling url params: 
     - useParams()

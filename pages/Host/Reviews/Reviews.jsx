@@ -1,6 +1,8 @@
 import { ScoreBars, ReviewComment } from "/components"
 import "./Reviews.css"
 
+
+
 export default function Reviews(){
   const scoreRatios = [0.4,0.2,0.1,0.3,0.1]
   return (

@@ -14,6 +14,7 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app)
 
 const vanCollectionRef = collection(db, "vans")
+const userCollectionRef = collection(db, "users")
 
 export async function getVans(){
   const collectionSnap = await getDocs(vanCollectionRef)
@@ -41,4 +42,14 @@ export async function getHostVans(){
     id: doc.id
   }))
   return vans
+}
+
+export async function loginUser(cred){
+  const q = query(
+    userCollectionRef, 
+    where("email", "==", cred.email), 
+    where("password", "==", cred.password))
+  const collectionSnap = await getDocs(q)
+  if (collectionSnap.empty) throw { message: "No user found" }
+  return collectionSnap.docs[0].data().name
 }
