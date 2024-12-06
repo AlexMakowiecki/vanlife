@@ -41,4 +41,22 @@ React Router 6
      - context
      - useOutletContext()
    - Using Layouts with Route components 
-   
+ - React Router extra funcionalities
+  - Loader({ request, params })
+    - defer()
+    - useLoaderData()
+  - ErrorElement
+  - useRouteError()
+  - Await
+  - Suspension
+  - Action({ request, params })
+    - useActionData()
+  - Form
+  - redirect()
+  - useNavigation()
+ - Performance
+  - Strict Mode
+  - React.lazy() - lazy import
+  - React.useMemo()
+  . React.memo()
+  . React.useCallback() 

@@ -197,6 +197,87 @@ It's a website that simulates a website where you can rent vans or manage the va
       - `.get()`: Get the value of the key passed as argument.
       - `.delete()`: Delete the key passed as argument, along with its value.
       - `.toString()`: Returns a string with all the key&value pairs. (the same as in the url, without the question mark)
+    - **Loader function:** it runs code before the render of the component, normally used to get data that you know that will take time, but is needed for the render of the component.
+      - The loader function is passed as a property of the route component that handle the component to be rendered. 
+      - For better organization, the loader function is created inside the file where the component to render is, and exported from there
+      - You can use **useLoaderData()** to get the data returned from the loader function
+      - You can use defer() to tell React for which data it has to wait before the render and for which not.
+        - You pass the data inside an object as an argument of the defer() function. 
+      - The loader function also receives an object as a default parameter
+        - In the object, I used two properties: **request** and **params**
+          - **request:**Information about the request sended to get the page rendered
+          - **params:**An object containing the URL path params. 
+      - <details>
+          <summary><b>Syntax</b></summary>
+
+          ```JSX
+          /* App.jsx */
+          import Example, { exampleLoader } from "example-path"
+          export default function App(){
+            return (
+              <BrowserRouter>
+                <Routes>
+                  <Route path="/:exampleId" element={<Example/>} loader=/>
+                </Routes>
+              </BrowserRouter>
+              <Example loader={exampleLoader}/>
+            )
+          }
+          /* Example.jsx with URL: /23*/
+          import useLoaderData from "react-router-dom"
+          export function loader({ request, params }){
+            console.log(params) // ==> { exampleId: 23 }
+            console.log(request) // ==> { ..., url: http://domainName/23 }
+            return "loader executed"
+          }
+
+          export default function Example(){
+            const loaderMessage = useLoaderData()
+            return (
+              <h1>{loaderMessage}</h1> // ===> <h1>loader executed</h1>
+            )
+          }
+          ```
+        </details>
+    - **Await and Suspension:** needed to handle the render of elements that depends on information that you don't know when will you get it (like the loadedData() if is deferred).
+      - **Await:** A component that waits for a Promise to be resolved before rendering its own content. 
+        - The promise has to be passed inside the property `resolve`
+      - **Suspension:** A component that helps react handle components that need to wait for information to render.
+        - It has a property named `fallback` that receives the content you want to render while the main content is waiting for the data. 
+      <details>
+        <summary>Syntax</summary>
+
+        ```JSX
+        /* Example.jsx */
+        export async function loader(){
+          const res = await fetch("some-data")
+          const data = res.json()
+          return (defer({
+            message: data
+          }))
+        }
+        export default function Example(){
+          const dataPromise = useLoaderData().message
+          return (
+            <Suspension fallback={<h1>Loading...</h1>}>
+              <Await resolve={dataPromise}>
+                <h1>{message}<h1>
+              </Await>
+            </Suspension>
+          )
+        }
+        ```
+      </details>
+    - **ErrorElement:** a property of the Route components that determines what to render if the loader or the  data from the loader throws an error. 
+      - **useRouteError():** you can use this function inside the ErrorElement to get information about the error.
+    - **Action function:** a function that runs when a "Form" (React Router Component) is submitted.
+      - It access the information trough the property "request" of the default object parameter, and calling the method formData() of that property. 
+      - After that, it manages like any other FormData object.
+      - The **Form** component syntax is the same as the `<form>` element
+      - You also can return information in the function, and accessing it with the **useActionData()** function.
+    - **redirect():** redirect the user to another URL. The same as navigate() but it can be used outside the rendered component.
+    - **useNavigation():** it provides an object with information related mainly to the forms.
+      - `state`: "idle" if nothing happens, 'submitting' where the form is submitting.      
   - **Use cases**
     - <details>
         <summary><b>Navigation bar with Layout</b></summary>
