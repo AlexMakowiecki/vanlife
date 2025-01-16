@@ -20,7 +20,7 @@ export default function Header(){
         <NavLink to="vans" className={({ isActive }) => isActive ? "link link--active" : "link"}>Vans</NavLink>
         {
           logged
-          ? <button className="icon-link" onClick={ logOut }><FaRegUserCircle /></button>
+          ? <button className="icon-link logout-icon" onClick={ logOut }><FaRegUserCircle /><span>Logout</span></button>
           : <NavLink to="login" className={({ isActive }) => isActive ? "icon-link icon-link--active" : "icon-link"}><FaRegUserCircle /></NavLink>
         }
       </nav>

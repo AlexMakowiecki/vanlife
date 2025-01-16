@@ -20,7 +20,7 @@ export default function Income(){
           <h1 className="income__main-title">Income</h1>
           <p className="income__subtitle">Last <span className="remarked">30 days</span></p>
         </div>
-        <p className="income__number">$2,260</p>
+        <p className="income__number">$2,880</p>
       </div>
 
       <BarGraph
@@ -36,7 +36,7 @@ export default function Income(){
 
       <div className="income__transactions">
         <div className="income__transactions-header flex-container--spaced">
-          <h2 className="income__secondary-title">Your transactions (3)</h2>
+          <h2 className="income__secondary-title">Your transactions (4)</h2>
           <p className="income__subtitle">Last <span className="remarked">30 days</span></p>
         </div>
         <ul className="income__transactions-list">
@@ -54,5 +54,5 @@ const incomesInfo = [
   { income: 2100, month: "Se" },
   { income: 3900, month: "Oc" },
   { income: 4900, month: "No" },
-  { income: 2700, month: "De" }
+  { income: 2880, month: "De" }
 ];

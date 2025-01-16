@@ -18,7 +18,7 @@ export default function Host(){
     <Link to={`vans/${van.id}`} key={`van-small-link-${van.id}`}>
       <li>
         <VanSmall imgSrc={van.imageUrl} name={van.name} price={van.price}>
-          <p className="van-small__edit-text">Edit</p>
+          <p className="van-small__edit-text">View</p>
         </VanSmall>
       </li>
     </Link>
@@ -32,19 +32,18 @@ export default function Host(){
           <p className="host__income-text">
             Income last <span className="host__income-days">30 days</span>
           </p>
-          <Link className="host__simple-link">Details</Link> 
+          <Link to="income" className="host__simple-link">Details</Link> 
         </div>
         <p className="host__income-number">$2,260</p>
       </section>
       <section className="host__review host__inline-padding no-inside-margin">
         <h2 className="host__secondary-title">Review score</h2>
         <ScoreText score="5.0" total="5" className="host__score-text"/>
-        <Link className="host__simple-link">Details</Link>
+        <Link to="reviews" className="host__simple-link">Details</Link>
       </section>
       <section className="host__vans host__inline-padding no-inside-margin">
         <div className="flex-container--spaced">
           <h2 className="host__secondary-title">Your listed vans</h2>
-          <Link className="host__simple-link">View all</Link>
         </div>        
         <ul className="host__vans-list">
           { vans && vansListContent }
@@ -53,3 +52,5 @@ export default function Host(){
     </main>
   )
 }
+
+ // <Link className="host__simple-link">View all</Link> 

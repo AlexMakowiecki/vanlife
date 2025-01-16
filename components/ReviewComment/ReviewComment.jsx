@@ -1,10 +1,10 @@
 import { ScoreStars } from "/components"
 import "./ReviewComment.css"
 
-export default function Review(){
+export default function Review({score=3}){
   return (
     <div className="review-comment">
-      <ScoreStars score={3.6} className="review-comment__score"/>
+      <ScoreStars score={score} className="review-comment__score"/>
       <div className="review-comment__header">
         <p className="review-comment__name">Elliot</p>
         <p className="review-comment__date">December 1,2022</p>

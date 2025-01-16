@@ -4,7 +4,16 @@ import "./Reviews.css"
 
 
 export default function Reviews(){
-  const scoreRatios = [0.4,0.2,0.1,0.3,0.1]
+  const scoreArray = [3,2,2,4]
+
+  const scoreReviews = scoreArray.map(score => {
+    return (
+      <>
+        <ReviewComment score={score}/>
+        <hr className="reviews__separator"/>
+      </>
+    )
+  })
   return (
     <section className="reviews no-inside-margin">
       <div className="reviews__header">
@@ -12,16 +21,9 @@ export default function Reviews(){
         <p className="reviews__subtitle">last <span className="remarked">30 days</span></p>
       </div>
       <div className="reviews__main">
-        <ScoreBars scoreRatios={scoreRatios} className="reviews__score-bars"/>
+        <ScoreBars scoreArray={scoreArray} className="reviews__score-bars"/>
         <div className="reviews__comments">
-          <ReviewComment/>
-          <hr className="reviews__separator"/>
-          <ReviewComment/>
-          <hr className="reviews__separator"/>
-          <ReviewComment/>
-          <hr className="reviews__separator"/>
-          <ReviewComment/>
-          <hr className="reviews__separator"/>
+          { scoreReviews }
         </div>
       </div>
     </section>

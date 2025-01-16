@@ -86,10 +86,13 @@ export default function Login(){
         <button className="login__button" disabled={ state === "submitting" }>
           {(state === "submitting") ? "Logging in..." : "Sign in"}
         </button>
-      </Form>
-      <p className="login__text">
-        Don't have an account? <Link className="login__link">Create one now</Link>
-      </p>
+      </Form> 
     </main>
   )
 }
+
+/*
+    <p className="login__text">
+      Don't have an account? <Link className="login__link">Create one now</Link>
+    </p>
+*/

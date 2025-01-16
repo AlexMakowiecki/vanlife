@@ -27,9 +27,9 @@ export default function VanDetails({imgSrc, type, name, price, description}){
           <div className="van-details__info-text">
             <VanType type={van?.type} className="van-details__type"/>
             <h1 className="van-details__main-title">{van?.name}</h1>
-            <p className="van-details__price">{van?.price}<span className="van-details__price-time">/day</span></p>
+            <p className="van-details__price">${van?.price}<span className="van-details__price-time">/day</span></p>
             <p className="van-details__description">{van?.description}</p>
-            <button className="van-details__button">Rent this van</button>
+            <button disabled className="van-details__button">Not Available</button>
           </div>
         </div>
       </>}

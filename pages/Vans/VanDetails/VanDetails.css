@@ -57,6 +57,11 @@
   border:none;
 }
 
+.van-details__button:disabled{
+  opacity: 0.6;
+  cursor: default;
+}
+
 
 .van-details__price{
   font-size: 1.5rem;

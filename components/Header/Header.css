@@ -20,3 +20,17 @@ header nav{
   text-align: left;
   color:var(--dark-font-99);
 }
+
+.logout-icon{
+  display:flex;
+  gap: .25rem;
+  color: #6b1d1d;
+}
+
+.logout-icon span{
+  font-size: 0.8em;
+}
+
+.logout-icon:hover{
+  color: #461313
+}

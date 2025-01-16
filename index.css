@@ -33,13 +33,13 @@
 }
 
 html, body {
-    margin: 0;
-    padding: 0;
+  margin: 0;
 }
 
 body{
     font-family: "Inter";
-    background-color: var(--light-background-50)
+    background-color: var(--light-background-50);
+    min-height: 100vh;
 }
 
 a{
@@ -47,6 +47,7 @@ a{
 }
 
 #root{
+  min-height: 100vh;
   display:flex;
   flex-direction:column;
 }

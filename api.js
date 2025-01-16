@@ -50,6 +50,6 @@ export async function loginUser(cred){
     where("email", "==", cred.email), 
     where("password", "==", cred.password))
   const collectionSnap = await getDocs(q)
-  if (collectionSnap.empty) throw { message: "No user found" }
-  return collectionSnap.docs[0].data().name
+  /* if (collectionSnap.empty) throw { message: "No user found with that information" } */
+  return true /* collectionSnap.docs[0].data().name */
 }
