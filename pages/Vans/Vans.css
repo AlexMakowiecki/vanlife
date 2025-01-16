@@ -2,6 +2,25 @@
   padding: 3.375rem var(--page-inline-padding);
 }
 
+
+@media (max-width: 564px){
+  .vans__main-title{
+    text-align:center;
+  }
+
+  .vans__navigation{
+    justify-content:center;
+  }
+
+  .vans__list{
+    justify-content:center;
+  }
+
+  .van{
+    margin-bottom: 2rem
+  }
+}
+
 .vans__main-title{
   font-family: Inter;
   font-size: 2rem;

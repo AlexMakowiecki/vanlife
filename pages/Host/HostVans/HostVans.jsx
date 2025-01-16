@@ -21,7 +21,7 @@ export default function HostVans() {
       return (
         <Link to={`${van.id}`} id={van.id} key={`host-van-${van.id}`}>
           <VanSmall imgSrc={van.imageUrl} name={van.name} price={van.price}>
-            <p className="van-small__edit-text">Edit</p>
+            <p className="van-small__edit-text">View</p>
           </VanSmall>
         </Link>
       )
