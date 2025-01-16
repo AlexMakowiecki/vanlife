@@ -1,6 +1,7 @@
 .income{
   padding-inline: var(--page-inline-padding);
   color: var(--dark-font-70);
+  padding-bottom: 2rem;
 }
 
 .income__header{
