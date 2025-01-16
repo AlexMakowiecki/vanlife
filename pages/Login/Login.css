@@ -27,6 +27,7 @@
   flex-direction:column;
   gap: 1.375rem;
   margin-bottom: 2.9375rem;
+  padding-inline: 1.5rem;
 }
 
 .login__input-container{

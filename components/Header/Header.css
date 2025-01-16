@@ -9,7 +9,7 @@ header{
 header nav{
   display:flex;
   align-items:center;
-  gap: 1.625rem;
+  gap: min(1.625rem, 4vw);
 }
 
 .header__main-logo{

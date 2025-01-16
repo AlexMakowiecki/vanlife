@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
 :root{
   --simple-color: #E17654;
   --rugged-color: #115E59;
@@ -48,6 +50,10 @@ a{
   min-height: 100vh;
   display:flex;
   flex-direction:column;
+}
+
+#root > *:not(header, footer, nav){
+  flex: 1;
 }
 
 button{
